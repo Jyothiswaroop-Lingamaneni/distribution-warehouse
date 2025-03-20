@@ -3,10 +3,10 @@ package com.example.demo.shipment;
 
 public enum StockStatus {
     Stored("Stored"),
-    RECEIVED("Received"),
-    LOST("Lost"),
-    DISPATCHED("Dispatched"),
-    DAMAGED("Damaged");
+    Received("Received"),
+    Lost("Lost"),
+    Dispatched("Dispatched"),
+    Damaged("Damaged");
 
     private final String value;
 
