@@ -6,7 +6,7 @@ public enum StockStatus {
     Received("Received"),
     Lost("Lost"),
     Dispatched("Dispatched"),
-    Damaged("Damaged");
+    Damaged("Daaged");
 
     private final String value;
 
