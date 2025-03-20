@@ -16,7 +16,6 @@ public enum StockStatus {
     }
 
 
-    // Getter Method
     public String getValue() {
         return value;
     }
