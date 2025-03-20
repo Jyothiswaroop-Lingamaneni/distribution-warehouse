@@ -10,7 +10,7 @@ public enum StockStatus {
 
     private final String value;
 
-    // Constructor
+
     StockStatus(String value) {
         this.value = value;
     }
