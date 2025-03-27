@@ -6,7 +6,7 @@ public enum StockStatus {
     Received("Received"),
     Lost("Lost"),
     Dispatched("Dispatched"),
-    Damaged("Daaged");
+    Damaged("DamagedGoods");
 
     private final String value;
 
@@ -16,7 +16,6 @@ public enum StockStatus {
     }
 
 
-    // Getter Method
     public String getValue() {
         return value;
     }
