@@ -1,4 +1,5 @@
 package com.example.demo.warehouse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,8 +45,25 @@ class WareHouseService {
         w.setManagerId(warehouserequestDTO.getManagerId());
 
         return warehouseRepository.save(w);
-
-
-
+    }
+    public WareHouseEntity updateWarehouse(Integer warehouseId, WareHouseEntity updatedWarehouse) {
+        return warehouseRepository.findByWarehouseId(warehouseId)
+                .map(warehouseEntity -> {
+                    warehouseEntity.setWarehouseName(updatedWarehouse.getWarehouseName());
+                    warehouseEntity.setLocationCode(updatedWarehouse.getLocationCode());
+                    warehouseEntity.setCapacity(updatedWarehouse.getCapacity());
+                    warehouseEntity.setNoOfDoors(updatedWarehouse.getNoOfDoors());
+                    warehouseEntity.setNoOfRacks(updatedWarehouse.getNoOfRacks());
+                    warehouseEntity.setManagerId(updatedWarehouse.getManagerId());
+                    return warehouseRepository.save(warehouseEntity);
+                })
+                .orElseThrow(() -> new RuntimeException("Warehouse not found with ID: " + warehouseId));
+    }
+    public boolean deleteWarehouseById(Integer warehouseId) {
+        if (warehouseRepository.existsById(warehouseId)) {
+            warehouseRepository.deleteById(warehouseId);
+            return true;
+        }
+        return false;
     }
     }
